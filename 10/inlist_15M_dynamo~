@@ -1,0 +1,90 @@
+
+! inlist_rotation
+
+
+&star_job
+      show_log_description_at_start = .false.
+
+
+      eos_file_prefix = 'mesa'
+      kappa_file_prefix = 'gs98'
+      pgstar_flag = .true.
+      
+
+/ ! end of star_job namelist
+
+
+&controls
+
+         use_gold_tolerances = .true.
+
+         ! check for retries and backups as part of test_suite
+         ! you can/should delete this for use outside of test_suite
+            max_number_backups = 0
+            max_number_retries = 5
+         max_model_number = 500
+
+
+         initial_mass = 10
+         initial_z = 2d-2
+
+         hot_wind_scheme = 'Dutch'
+         hot_wind_full_on_T = 1d0
+         cool_wind_full_on_T = 0d0
+         Dutch_scaling_factor = 0.8
+
+
+         log_center_density_limit = 12 
+         log_center_temp_limit = 10.3d0 ! max T about 2d10
+         
+         xa_central_lower_limit_species(1) = 'h1'
+         xa_central_lower_limit(1) = 0.01                       
+      
+         use_Ledoux_criterion = .true.
+   
+         alpha_semiconvection = 4d-2
+         thermohaline_coeff = 2  
+
+         dX_mix_dist_limit = 1d-4 
+         
+ 
+         clip_D_limit = 10
+         
+         xa_scale = 1d-5
+
+         mixing_length_alpha = 1.6
+         
+         delta_lgL_He_limit = -1
+
+
+
+
+         
+         delta_lgTeff_limit = 0.005  
+         delta_lgL_limit = 0.05
+         delta_lgRho_cntr_limit = 0.02  
+
+         min_overshoot_q = 1d-3 
+
+         T_mix_limit = 1d4
+
+      photo_interval = 50
+      profile_interval = 50
+      history_interval = 1
+      terminal_interval = 10
+      write_header_frequency = 10
+
+      !photo_interval = 5
+      !profile_interval = 5
+      !history_interval = 1
+      !terminal_interval = 1
+      !write_header_frequency = 10
+      
+/ ! end of controls namelist
+
+
+
+&pgstar
+         
+
+/ ! end of pgstar namelist

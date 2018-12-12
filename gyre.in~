@@ -1,0 +1,84 @@
+&constants
+/
+
+&model
+	model_type = 'EVOL'
+	!file = 'spb.mesa'
+	file = '10/LOGS/profile2.data.GYRE'
+	file_format = 'MESA'
+/
+
+&mode
+	l = 1
+	tag = 'l=1'
+/
+
+&mode
+	l = 2
+	tag = 'l=2'
+/
+
+&mode
+        l = 3
+        tag = 'l=3'
+/
+
+
+&osc
+	nonadiabatic = .TRUE.
+/
+
+&num
+	diff_scheme = 'COLLOC_GL2' ! MAGNUS_GL2
+/
+
+&scan
+	grid_type = 'INVERSE'
+	freq_min_units = 'UHZ'
+        freq_max_units = 'UHZ'
+	freq_min = 0.05
+	freq_max = 10
+	n_freq = 100
+	tag_list = 'l=1'
+/
+
+&scan
+	grid_type = 'INVERSE'
+	freq_min_units = 'UHZ'
+	freq_max_units = 'UHZ'
+	freq_min = 0.05
+	freq_max = 10
+	n_freq = 100
+	tag_list = 'l=2'
+/
+
+&scan
+        grid_type = 'INVERSE'
+        freq_min_units = 'UHZ'
+        freq_max_units = 'UHZ'
+        freq_min = 0.05
+        freq_max = 10
+        n_freq = 100
+        tag_list = 'l=3'
+/
+
+
+
+&grid
+	n_inner = 5
+	alpha_osc = 10
+	alpha_exp = 2
+/
+
+&ad_output
+/
+
+&nad_output
+	summary_file = '10_XC_068_summary.txt'
+	summary_file_format = 'TXT'
+	summary_item_list = 'j,l,n_pg,n_p,n_g,eta,omega,H'
+	mode_file_format = 'TXT'
+	mode_template = '10_XC_068_mode.%J.txt'
+	mode_item_list = 'j,l,n_pg,n_p,n_g,eta,freq,x,f_T,xi_r,xi_h,dW_dx,dE_dx,H,L_star,T,M_r,rho,P,prop_type'
+!	mode_item_list = 'j,l,n_pg,n_p,n_g,eta,freq,x,f_T,xi_r,xi_h,dW_dx'
+/

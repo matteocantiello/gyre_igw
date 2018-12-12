@@ -1,0 +1,103 @@
+
+! inlist_rotation
+
+
+&star_job
+      show_log_description_at_start = .false.
+
+
+      eos_file_prefix = 'mesa'
+      kappa_file_prefix = 'gs98'
+      pgstar_flag = .true.
+      
+
+/ ! end of star_job namelist
+
+
+&controls
+
+              
+         initial_mass = 10
+         initial_z = 2d-2
+
+      ! GYRE OUTPUT 
+         write_pulse_data_with_profile = .true.
+         pulse_data_format = 'GYRE'   
+	 
+	 ! BRUNT SMOOTHING
+	 num_cells_for_smooth_brunt_B = 3 ! 2
+	 threshold_for_smooth_brunt_B = 0d0 
+
+         hot_wind_scheme = 'Dutch'
+         hot_wind_full_on_T = 1d0
+         cool_wind_full_on_T = 0d0
+         Dutch_scaling_factor = 0.8
+
+	 ! STOPPING CRITERIA 
+         log_center_density_limit = 12 
+         log_center_temp_limit = 10.3d0 ! max T about 2d10
+         
+         xa_central_lower_limit_species(1) = 'h1'
+         xa_central_lower_limit(1) = 0.009                       
+        
+         ! CONVECTION      	 
+	   mlt_option = 'Henyey'
+         mixing_length_alpha = 1.5
+
+         use_Ledoux_criterion = .true. ! .true.
+         alpha_semiconvection = 0.1
+         !thermohaline_coeff = 2  
+         
+         ! OVERSHOOTING  
+         ! When using step overshoot, you must set overshoot_f0 as well as f.
+
+         ! overshoot_f_above_burn_h_core = 0.3
+         overshoot_f0_above_burn_h_core = 0.01 
+         step_overshoot_f_above_burn_h_core = 0.29
+
+          ! `f0*Hp` determines r0 where switch from convection to overshooting.
+          ! Overshooting extends a distance `step_f*Hp0` from r0
+          ! with constant diffusion coeff `D = step_D + step_D0_coeff*D0`
+          ! where D0 = diffusion coefficient D at point r0.
+
+         step_overshoot_D = 0
+         step_overshoot_D0_coeff = 0.01
+
+         !MESH AND TIMESTEP PARAMETERS
+
+         mesh_delta_coeff = 0.5 ! 0.5
+         varcontrol_target = 1d-3 !1d-4
+         max_allowed_nz = 50000
+
+         !better resolution of the Henyey hook
+         delta_lg_XH_cntr_max = 0.001
+         delta_lg_XH_cntr_limit = 0.001
+         dX_nuc_drop_limit = 0.001
+
+
+         delta_lgTeff_limit = 0.005  
+         delta_lgL_limit = 0.05
+         delta_lgRho_cntr_limit = 0.02  
+         dX_mix_dist_limit = 1d-4
+         clip_D_limit = 10
+         xa_scale = 1d-5
+         delta_lgL_He_limit = -1
+         min_overshoot_q = 1d-3 
+
+         T_mix_limit = 1d4
+
+      photo_interval = 1000
+      profile_interval = 1000
+      history_interval = 1
+      terminal_interval = 10
+      write_header_frequency = 10
+
+      
+/ ! end of controls namelist
+
+
+
+&pgstar
+         
+
+/ ! end of pgstar namelist
