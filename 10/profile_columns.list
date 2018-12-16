@@ -39,6 +39,8 @@
    conv_mixing_type ! mixing types are defined in mesa/const
    csound ! sound speed
    v_div_csound ! velocity divided by sound speed
+   log_conv_L_div_L
+   
    total_energy ! v^2/2 - G m / r + E (ergs/g).  negative if bound
    v_div_r ! velocity divided by radius
    !scale_height ! pressure scale height; P / (g rho)   (in Rsun units)

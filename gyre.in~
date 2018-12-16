@@ -19,8 +19,8 @@
 /
 
 &mode
-        l = 3
-        tag = 'l=3'
+  l = 3
+  tag = 'l=3'
 /
 
 
@@ -36,9 +36,9 @@
 	grid_type = 'INVERSE'
 	freq_min_units = 'UHZ'
         freq_max_units = 'UHZ'
-	freq_min = 100
-	freq_max = 200
-	n_freq = 50
+	freq_min = 1
+	freq_max = 50
+	n_freq = 2500
 	tag_list = 'l=1'
 /
 
@@ -46,9 +46,9 @@
 	grid_type = 'INVERSE'
 	freq_min_units = 'UHZ'
 	freq_max_units = 'UHZ'
-	freq_min = 100
-	freq_max = 200
-	n_freq = 50
+	freq_min = 1
+	freq_max = 50
+	n_freq = 2500
 	tag_list = 'l=2'
 /
 
@@ -56,9 +56,9 @@
         grid_type = 'INVERSE'
         freq_min_units = 'UHZ'
         freq_max_units = 'UHZ'
-        freq_min = 100
-        freq_max = 200
-        n_freq = 50
+        freq_min = 1
+        freq_max = 50
+        n_freq = 2500
         tag_list = 'l=3'
 /
 
@@ -74,11 +74,11 @@
 /
 
 &nad_output
-	summary_file = '10XC068_100_200summary.txt'
+	summary_file = '10XC068_1_50mode.txt'
 	summary_file_format = 'TXT'
-	summary_item_list = 'j,l,n_pg,n_p,n_g,eta,omega,freq,H'
+	summary_item_list = 'j,l,n_p,n_g,eta,omega,freq,x_ref,xi_r_ref,xi_h_ref,H'
 	mode_file_format = 'TXT'
-	mode_template = '10XC068_100_200mode.%J.txt'
+	mode_template = '10XC068_1_50mode.%J.txt'
 	mode_item_list = 'j,l,n_pg,n_p,n_g,eta,omega,freq,x,f_T,xi_r,xi_h,dW_dx,dE_dx,H,L_star,T,M_r,rho,P,prop_type'
 	freq_units = 'UHZ'
 /
