@@ -66,8 +66,8 @@
 
 &grid
 	n_inner = 5
-	alpha_osc = 10
-	alpha_exp = 2
+	alpha_osc = 20
+	alpha_exp = 4
 /
 
 &ad_output
