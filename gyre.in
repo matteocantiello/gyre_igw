@@ -4,7 +4,7 @@
 &model
 	model_type = 'EVOL'
 	!file = 'spb.mesa'
-	file = '10/LOGS/profile2.data.GYRE'
+	file = '20/LOGS/profile3.data.GYRE'
 	file_format = 'MESA'
 /
 
@@ -38,7 +38,7 @@
         freq_max_units = 'UHZ'
 	freq_min = 1
 	freq_max = 50
-	n_freq = 2500
+	n_freq = 100
 	tag_list = 'l=1'
 /
 
@@ -48,7 +48,7 @@
 	freq_max_units = 'UHZ'
 	freq_min = 1
 	freq_max = 50
-	n_freq = 2500
+	n_freq = 100
 	tag_list = 'l=2'
 /
 
@@ -58,7 +58,7 @@
         freq_max_units = 'UHZ'
         freq_min = 1
         freq_max = 50
-        n_freq = 2500
+        n_freq = 100
         tag_list = 'l=3'
 /
 
@@ -74,11 +74,11 @@
 /
 
 &nad_output
-	summary_file = '10XC068_1_50mode.txt'
+	summary_file = '20XC001_1_50mode.txt'
 	summary_file_format = 'TXT'
 	summary_item_list = 'j,l,n_p,n_g,eta,omega,freq,x_ref,xi_r_ref,xi_h_ref,H,lag_L_ref'
 	mode_file_format = 'TXT'
-	mode_template = '10XC068_1_50mode.%J.txt'
+	mode_template = '20XC001_1_50mode.%J.txt'
 	mode_item_list = 'j,l,n_pg,n_p,n_g,eta,omega,freq,x,f_T,xi_r,xi_h,dW_dx,dE_dx,H,L_star,T,M_r,rho,P,lag_L,prop_type'
 	freq_units = 'UHZ'
 /
