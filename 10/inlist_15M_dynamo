@@ -20,7 +20,11 @@
          initial_mass = 10
          initial_z = 2d-2
 
-      ! GYRE OUTPUT 
+	 ! GOLD TOLERANCES AND DEDT FORM
+	 use_gold_tolerances = .true.
+         use_dedt_form_of_energy_eqn = .true.
+
+         ! GYRE OUTPUT 
          write_pulse_data_with_profile = .true.
          pulse_data_format = 'GYRE'   
 	 
@@ -41,11 +45,11 @@
          xa_central_lower_limit(1) = 0.009                       
         
          ! CONVECTION      	 
-	   mlt_option = 'Henyey'
+	 mlt_option = 'Henyey'
          mixing_length_alpha = 1.5
 
-         use_Ledoux_criterion = .true. ! .true.
-         alpha_semiconvection = 0.1
+         use_Ledoux_criterion = .false. ! .true.
+         !alpha_semiconvection = 0.1
          !thermohaline_coeff = 2  
          
          ! OVERSHOOTING  
@@ -85,9 +89,10 @@
          min_overshoot_q = 1d-3 
 
          T_mix_limit = 1d4
-
-      photo_interval = 1000
-      profile_interval = 1000
+	 
+      !write_profiles_flag = .false.	 
+      photo_interval = 100000
+      profile_interval = 100000
       history_interval = 1
       terminal_interval = 10
       write_header_frequency = 10

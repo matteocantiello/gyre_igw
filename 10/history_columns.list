@@ -219,7 +219,8 @@
       
       !rpp
 
-   ! info about the max burning locations for hydrogen, helium, and metals
+   ! info about the max b bad history list name: log_max_dlnEdt_residual
+
       
       ! info about location where have max rate of hydrogen burning (PP and CNO)
       !eps_h_max ! erg/g/s
@@ -286,22 +287,43 @@
       num_backups ! total during the run
       num_iters 
 
-      !## maximum solver residuals
-      log_max_abs_lgE_residual
+
+
+
+   !## maximum solver residuals
+      
+      log_max_abs_E_residual
       log_max_abs_v_residual
-      log_max_dlnEdt_residual
+     ! log_max_dlnEdt_residual
       log_max_drdt_residual
       log_max_dvdt_residual
       log_max_lnd_residual
 
-      avg_lgE_residual
+      avg_E_residual
       avg_v_residual
 
-      log_avg_lgE_residual
+      log_avg_E_residual
       log_avg_v_residual
 
-      max_abs_lgE_residual
+    
       max_abs_v_residual
+      
+    !## maximum solver residuals
+    !  log_max_abs_lgE_residual
+    !  log_max_abs_v_residual
+    !  log_max_dlnEdt_residual
+    !  log_max_drdt_residual
+    !  log_max_dvdt_residual
+    !  log_max_lnd_residual
+
+  !    avg_lgE_residual
+   !   avg_v_residual
+
+    !  log_avg_lgE_residual
+    !  log_avg_v_residual
+
+!      max_abs_lgE_residual
+ !     max_abs_v_residual
 
    !## conservation during mesh adjust
       log_mesh_adjust_IE_conservation
